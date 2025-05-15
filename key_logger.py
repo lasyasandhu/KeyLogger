@@ -70,3 +70,5 @@ def main():
         print("Keylogger has stopped.")
 if __name__ == "__main__":
     main()
+
+# This code is a simple keylogger that logs keystrokes to a file.
