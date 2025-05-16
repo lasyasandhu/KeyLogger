@@ -25,13 +25,13 @@ def encrypt_file(file_name):
 
 
 
-def decrypt_file(file_name):
+def decrypt_file(file_name, decypted_file_name):
     """Decrypt the log file."""
     with open(file_name, "rb") as encrypted_file:
         encrypted = encrypted_file.read()
 
     decrypted = fernet.decrypt(encrypted)
 
-    with open(file_name, "wb") as decrypted_file:
+    with open(decypted_file_name, "wb") as decrypted_file:
         decrypted_file.write(decrypted)
     print(f"File {file_name} has been decrypted.")

